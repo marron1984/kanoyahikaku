@@ -6,7 +6,7 @@ import { useState } from "react";
 const navItems = [
   { label: "Compare Stays", href: "/nara-luxury-stays" },
   { label: "Experiences", href: "/experiences/early-morning-deer-walk" },
-  { label: "Journal", href: "/journal/best-luxury-stays-in-nara" },
+  { label: "Journal", href: "/journal" },
   { label: "FAQ", href: "/faq" },
 ];
 

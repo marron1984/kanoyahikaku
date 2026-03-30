@@ -3,7 +3,11 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import RecommendationBlock from "@/components/RecommendationBlock";
 import CTASection from "@/components/CTASection";
-import { articles, getArticleBySlug } from "@/data/articles";
+import {
+  getAllArticles,
+  getArticleBySlugUnified,
+  getRelatedArticles,
+} from "@/lib/articles-unified";
 import { getStayBySlug } from "@/data/stays";
 import Link from "next/link";
 
@@ -12,12 +16,14 @@ interface ArticlePageProps {
 }
 
 export async function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  return getAllArticles().map((article) => ({ slug: article.slug }));
 }
 
-export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ArticlePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = getArticleBySlugUnified(slug);
   if (!article) return {};
 
   return {
@@ -35,12 +41,14 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = getArticleBySlugUnified(slug);
   if (!article) notFound();
 
   const featuredStay = article.featuredStaySlug
     ? getStayBySlug(article.featuredStaySlug)
     : null;
+
+  const related = getRelatedArticles(article.slug, article.category, 5);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -69,7 +77,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs
           items={[
-            { label: "Journal" },
+            { label: "Journal", href: "/journal" },
             { label: article.title },
           ]}
         />
@@ -82,7 +90,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <span className="text-xs uppercase tracking-wider text-gold">
               {article.category}
             </span>
-            <span className="text-xs text-gray-warm">{article.readingTime}</span>
+            <span className="text-xs text-gray-warm">
+              {article.readingTime}
+            </span>
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal tracking-tight">
@@ -134,7 +144,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   </h2>
                 )}
                 {section.content.split("\n\n").map((p, j) => (
-                  <p key={j} className="text-base leading-relaxed text-charcoal-light mb-4">
+                  <p
+                    key={j}
+                    className="text-base leading-relaxed text-charcoal-light mb-4"
+                  >
                     {p}
                   </p>
                 ))}
@@ -143,33 +156,47 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             );
           })}
 
+          {/* Inline Kanoya recommendation for articles that feature it */}
+          {featuredStay && !article.sections.some((s) => s.recommendationSlug) && (
+            <RecommendationBlock stay={featuredStay} />
+          )}
+
           {/* Tags */}
           <div className="mt-12 pt-8 border-t border-gray-lighter">
             <div className="flex flex-wrap gap-2">
               {article.tags.map((tag) => (
-                <span key={tag} className="text-xs px-2 py-1 bg-cream-dark text-gray-warm border border-gray-lighter">
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-1 bg-cream-dark text-gray-warm border border-gray-lighter"
+                >
                   {tag}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* More articles */}
+          {/* Related articles */}
           <div className="mt-8">
-            <h3 className="font-serif text-lg text-charcoal mb-4">More from the Journal</h3>
+            <h3 className="font-serif text-lg text-charcoal mb-4">
+              More from the Journal
+            </h3>
             <div className="flex flex-col gap-2">
-              {articles
-                .filter((a) => a.slug !== article.slug)
-                .map((a) => (
-                  <Link
-                    key={a.slug}
-                    href={`/journal/${a.slug}`}
-                    className="text-sm text-charcoal border-b border-charcoal/20 hover:border-charcoal transition-colors inline-block"
-                  >
-                    {a.title}
-                  </Link>
-                ))}
+              {related.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={`/journal/${a.slug}`}
+                  className="text-sm text-charcoal border-b border-charcoal/20 hover:border-charcoal transition-colors inline-block"
+                >
+                  {a.title}
+                </Link>
+              ))}
             </div>
+            <Link
+              href="/journal"
+              className="mt-4 inline-block text-sm text-charcoal-light hover:text-charcoal transition-colors"
+            >
+              View all articles &rarr;
+            </Link>
           </div>
         </div>
       </article>

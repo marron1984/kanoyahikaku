@@ -9,7 +9,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import { getFeaturedStay, getStaysSorted } from "@/data/stays";
 import { experiences } from "@/data/experiences";
-import { articles } from "@/data/articles";
+import { getFeaturedArticles } from "@/lib/articles-unified";
 import { globalFaqs } from "@/data/faqs";
 import Link from "next/link";
 
@@ -153,9 +153,17 @@ export default function HomePage() {
             description="Perspectives, guides, and insights for travelers considering Nara."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {articles.map((article) => (
+            {getFeaturedArticles(6).map((article) => (
               <ArticleCard key={article.id} article={article} />
             ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/journal"
+              className="inline-block border border-charcoal/20 text-charcoal text-sm tracking-wide px-8 py-3 hover:bg-charcoal hover:text-cream transition-colors"
+            >
+              View All Articles
+            </Link>
           </div>
         </div>
       </section>

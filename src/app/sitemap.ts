@@ -1,15 +1,17 @@
 import type { MetadataRoute } from "next";
 import { stays } from "@/data/stays";
 import { experiences } from "@/data/experiences";
-import { articles } from "@/data/articles";
+import { getAllArticles } from "@/lib/articles-unified";
 import { siteConfig } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.siteUrl;
+  const allArticles = getAllArticles();
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     { url: `${base}/nara-luxury-stays`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/journal`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
   ];
 
@@ -27,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const articlePages: MetadataRoute.Sitemap = articles.map((article) => ({
+  const articlePages: MetadataRoute.Sitemap = allArticles.map((article) => ({
     url: `${base}/journal/${article.slug}`,
     lastModified: new Date(article.publishedAt),
     changeFrequency: "monthly",

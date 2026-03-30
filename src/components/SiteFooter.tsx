@@ -36,9 +36,10 @@ export default function SiteFooter() {
           <div>
             <h4 className="text-xs uppercase tracking-widest text-cream/40 mb-4">Journal</h4>
             <ul className="space-y-2">
-              <li><Link href="/journal/best-luxury-stays-in-nara" className="text-sm hover:text-cream transition-colors">Best Luxury Stays</Link></li>
+              <li><Link href="/journal" className="text-sm hover:text-cream transition-colors">All Articles</Link></li>
+              <li><Link href="/journal/luxury-hotels-nara-japan" className="text-sm hover:text-cream transition-colors">Luxury Hotels in Nara</Link></li>
+              <li><Link href="/journal/best-ryokan-nara-traditional-japanese-inn" className="text-sm hover:text-cream transition-colors">Best Ryokan in Nara</Link></li>
               <li><Link href="/journal/where-to-stay-in-nara-instead-of-kyoto" className="text-sm hover:text-cream transition-colors">Nara vs Kyoto</Link></li>
-              <li><Link href="/journal/how-many-nights-to-spend-in-nara" className="text-sm hover:text-cream transition-colors">How Many Nights</Link></li>
             </ul>
           </div>
         </div>
