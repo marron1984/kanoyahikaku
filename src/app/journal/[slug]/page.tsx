@@ -9,6 +9,8 @@ import {
   getRelatedArticles,
 } from "@/lib/articles-unified";
 import { getStayBySlug } from "@/data/stays";
+import { getArticleImage } from "@/lib/images";
+import UnsplashImage from "@/components/UnsplashImage";
 import Link from "next/link";
 
 interface ArticlePageProps {
@@ -121,10 +123,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
       {/* Hero Image */}
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="aspect-[16/8] bg-gray-lighter">
-          <div className="w-full h-full flex items-center justify-center text-gray-warm">
-            {article.title}
-          </div>
+        <div className="aspect-[16/8] bg-gray-lighter overflow-hidden">
+          <UnsplashImage image={getArticleImage(article.category)} priority />
         </div>
       </div>
 
@@ -205,7 +205,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         title="Find Your Perfect Nara Stay"
         description="Compare the best luxury accommodations in Nara, ranked by our editorial team."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
-        secondaryCta={{ label: "Explore Kanoya", href: "/stays/kanoya" }}
+        secondaryCta={{ label: "Read the Journal", href: "/journal" }}
       />
     </>
   );

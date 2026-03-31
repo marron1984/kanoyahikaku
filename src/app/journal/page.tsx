@@ -70,7 +70,7 @@ export default function JournalIndexPage() {
         title="Ready to Choose Your Nara Stay?"
         description="Compare the best luxury accommodations in Nara, ranked by our editorial team."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
-        secondaryCta={{ label: "Explore Kanoya", href: "/stays/kanoya" }}
+        secondaryCta={{ label: "Browse Experiences", href: "/experiences/early-morning-deer-walk" }}
       />
     </>
   );

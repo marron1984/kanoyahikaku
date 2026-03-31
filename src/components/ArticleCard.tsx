@@ -1,17 +1,19 @@
 import Link from "next/link";
 import type { Article } from "@/types";
+import UnsplashImage from "./UnsplashImage";
+import { getArticleImage } from "@/lib/images";
 
 interface ArticleCardProps {
   article: Article;
 }
 
 export default function ArticleCard({ article }: ArticleCardProps) {
+  const image = getArticleImage(article.category);
+
   return (
     <article className="group border border-gray-lighter hover:border-gray-warm/30 transition-colors bg-white/50">
       <div className="aspect-[16/9] bg-gray-lighter overflow-hidden">
-        <div className="w-full h-full flex items-center justify-center text-gray-warm text-sm">
-          {article.title}
-        </div>
+        <UnsplashImage image={image} />
       </div>
       <div className="p-5 sm:p-6">
         <div className="flex items-center gap-3 mb-3">
