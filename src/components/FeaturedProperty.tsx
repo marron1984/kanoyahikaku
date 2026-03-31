@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Stay } from "@/types";
 import EditorChoiceBadge from "./EditorChoiceBadge";
 import ScoreBadge from "./ScoreBadge";
+import UnsplashImage from "./UnsplashImage";
+import { stayImages } from "@/lib/images";
 
 interface FeaturedPropertyProps {
   stay: Stay;
@@ -13,10 +15,10 @@ export default function FeaturedProperty({ stay }: FeaturedPropertyProps) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image area */}
-          <div className="relative aspect-[4/3] bg-gray-lighter">
-            <div className="absolute inset-0 flex items-center justify-center text-gray-warm">
-              Kanoya — Featured Property
-            </div>
+          <div className="relative aspect-[4/3] bg-gray-lighter overflow-hidden">
+            {stayImages[stay.slug] && (
+              <UnsplashImage image={stayImages[stay.slug]} priority />
+            )}
             <div className="absolute top-4 left-4">
               <EditorChoiceBadge />
             </div>

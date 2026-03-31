@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SectionHeading from "@/components/SectionHeading";
-import RecommendationBlock from "@/components/RecommendationBlock";
 import CTASection from "@/components/CTASection";
 import StayCard from "@/components/StayCard";
+import UnsplashImage from "@/components/UnsplashImage";
 import { experiences, getExperienceBySlug } from "@/data/experiences";
 import { getStayBySlug } from "@/data/stays";
+import { experienceImages } from "@/lib/images";
 import Link from "next/link";
 
 interface ExperiencePageProps {
@@ -56,10 +57,14 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
       {/* Hero */}
       <section className="pb-12 sm:pb-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="relative aspect-[16/7] bg-gray-lighter mb-8">
-            <div className="absolute inset-0 flex items-center justify-center text-gray-warm text-lg">
-              {exp.title}
-            </div>
+          <div className="relative aspect-[16/7] bg-gray-lighter mb-8 overflow-hidden">
+            {experienceImages[exp.slug] ? (
+              <UnsplashImage image={experienceImages[exp.slug]} priority />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center text-gray-warm text-lg">
+                {exp.title}
+              </div>
+            )}
           </div>
 
           <div className="max-w-3xl">
@@ -115,19 +120,14 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             </div>
           ))}
 
-          {/* Featured Stay Recommendation */}
-          {featuredStay && (
-            <RecommendationBlock
-              stay={featuredStay}
-              context="Best stay for this experience"
-            />
-          )}
-
-          {/* Secondary stays */}
-          {secondaryStays.length > 0 && (
+          {/* Recommended stays for this experience */}
+          {(featuredStay || secondaryStays.length > 0) && (
             <div className="mt-12">
-              <SectionHeading title="Other Suitable Stays" align="left" />
+              <SectionHeading title="Where to Stay for This Experience" align="left" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {featuredStay && (
+                  <StayCard stay={featuredStay} showScore={false} />
+                )}
                 {secondaryStays.map((stay) =>
                   stay ? (
                     <StayCard key={stay.id} stay={stay} showScore={false} />
@@ -160,9 +160,8 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
 
       <CTASection
         title="Plan Your Nara Experience"
-        description="Start with the right stay. Kanoya places you at the heart of everything that makes Nara extraordinary."
-        primaryCta={{ label: "Explore Kanoya", href: "/stays/kanoya" }}
-        secondaryCta={{ label: "Compare All Stays", href: "/nara-luxury-stays" }}
+        description="Compare stays that put you closest to the experiences that matter most."
+        primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
       />
     </>
   );

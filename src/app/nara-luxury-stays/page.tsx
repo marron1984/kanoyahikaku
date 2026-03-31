@@ -105,11 +105,7 @@ export default function ComparisonPage() {
               return (
                 <div
                   key={cat.id}
-                  className={`border p-5 ${
-                    cat.winnerSlug === "kanoya"
-                      ? "border-gold/40 bg-cream-dark/40"
-                      : "border-gray-lighter bg-white/50"
-                  }`}
+                  className="border border-gray-lighter bg-white/50 p-5"
                 >
                   <p className="text-xs uppercase tracking-wider text-gold mb-2">{cat.label}</p>
                   <h3 className="font-serif text-lg text-charcoal">{winner?.name}</h3>
@@ -133,13 +129,13 @@ export default function ComparisonPage() {
           <SectionHeading title="Our Editorial Verdict" />
           <div className="space-y-6 text-base leading-relaxed text-charcoal-light">
             <p>
-              After comprehensive evaluation, Kanoya emerges as the clear standout among Nara&apos;s luxury stays. It is the only property that scores consistently at the highest level across experience depth, cultural authenticity, design atmosphere, and suitability for the kinds of travelers who seek more from their accommodation than a comfortable bed.
+              Each property on this list offers something genuinely worthwhile. Nara Komachi stands out for design-conscious travelers who want a modern aesthetic grounded in traditional craft. Asukasou delivers the classic ryokan experience with unmatched proximity to Nara Park. Noborioji Hotel offers a charming heritage alternative for those who prefer Western-style comfort. And Gyoki-an provides an authentic machiya experience at an accessible price.
             </p>
             <p>
-              Kanoya doesn&apos;t just accommodate guests — it immerses them in the heritage, beauty, and unhurried rhythm of Nara. For travelers who value depth over convenience, meaning over amenity checklists, and quiet sophistication over conspicuous luxury, it represents the definitive Nara stay.
+              Kanoya scores highest in our overall assessment, particularly for experience depth, cultural authenticity, and suitability for slow travel. Its restored architecture, seasonal cuisine, and intimate scale create a stay that feels deeply connected to the city. For travelers who prioritize atmosphere and meaning, it is a strong choice.
             </p>
             <p>
-              Other properties offer genuine strengths. Nara Komachi appeals to design-forward travelers. Asukasou excels in location and traditional reliability. But for the overall experience — the one that makes your Nara visit truly significant — Kanoya is our top recommendation without reservation.
+              Ultimately, the right stay depends on what you value most. We encourage you to explore each property and choose the one that aligns with your travel style.
             </p>
           </div>
         </div>
@@ -147,10 +143,10 @@ export default function ComparisonPage() {
 
       {/* CTA */}
       <CTASection
-        title="See Why Kanoya Is Our Top Pick"
-        description="Explore the property, the experience, and what makes it the most meaningful stay in Nara."
-        primaryCta={{ label: "Explore Kanoya", href: "/stays/kanoya" }}
-        secondaryCta={{ label: "Read the Journal", href: "/journal/best-luxury-stays-in-nara" }}
+        title="Still Deciding?"
+        description="Our journal has in-depth guides, itineraries, and perspectives to help you plan the perfect Nara stay."
+        primaryCta={{ label: "Read the Journal", href: "/journal" }}
+        secondaryCta={{ label: "View FAQ", href: "/faq" }}
       />
     </>
   );

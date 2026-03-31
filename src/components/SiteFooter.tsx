@@ -44,12 +44,18 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-cream/40">
-            &copy; {new Date().getFullYear()} Nara Stays. An editorial guide to premium stays in Nara, Japan.
-          </p>
-          <p className="text-xs text-cream/40">
-            Curated with care for discerning travelers.
+        <div className="mt-16 pt-8 border-t border-cream/10">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-xs text-cream/40">
+              &copy; {new Date().getFullYear()} Nara Stays. An editorial guide to premium stays in Nara, Japan.
+            </p>
+            <p className="text-xs text-cream/40">
+              Curated with care for discerning travelers.
+            </p>
+          </div>
+          <p className="mt-4 text-xs text-cream/30 text-center">
+            Photography via{" "}
+            <a href="https://unsplash.com" className="underline hover:text-cream/50" target="_blank" rel="noopener noreferrer">Unsplash</a>.
           </p>
         </div>
       </div>

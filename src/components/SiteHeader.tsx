@@ -32,12 +32,6 @@ export default function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/stays/kanoya"
-              className="text-sm tracking-wide bg-charcoal text-cream px-4 py-2 hover:bg-charcoal-light transition-colors"
-            >
-              Explore Kanoya
-            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -70,13 +64,6 @@ export default function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/stays/kanoya"
-                onClick={() => setMenuOpen(false)}
-                className="text-sm tracking-wide bg-charcoal text-cream px-4 py-2 text-center mt-2"
-              >
-                Explore Kanoya
-              </Link>
             </div>
           </nav>
         )}

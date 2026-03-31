@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Stay } from "@/types";
 import EditorChoiceBadge from "./EditorChoiceBadge";
 import ScoreBadge from "./ScoreBadge";
+import UnsplashImage from "./UnsplashImage";
+import { stayImages } from "@/lib/images";
 
 interface StayCardProps {
   stay: Stay;
@@ -21,9 +23,13 @@ export default function StayCard({ stay, rank, showScore = true, featured = fals
     >
       {/* Image placeholder */}
       <div className={`relative ${featured ? "aspect-[16/10]" : "aspect-[16/9]"} bg-gray-lighter overflow-hidden`}>
-        <div className="absolute inset-0 flex items-center justify-center text-gray-warm text-sm">
-          {stay.name}
-        </div>
+        {stayImages[stay.slug] ? (
+          <UnsplashImage image={stayImages[stay.slug]} />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-gray-warm text-sm">
+            {stay.name}
+          </div>
+        )}
         {stay.editorChoice && (
           <div className="absolute top-4 left-4">
             <EditorChoiceBadge />

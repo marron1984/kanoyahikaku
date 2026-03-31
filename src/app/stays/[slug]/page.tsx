@@ -6,10 +6,10 @@ import ScoreBadge from "@/components/ScoreBadge";
 import EditorChoiceBadge from "@/components/EditorChoiceBadge";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
-import RecommendationBlock from "@/components/RecommendationBlock";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { stays, getStayBySlug, getFeaturedStay } from "@/data/stays";
+import UnsplashImage from "@/components/UnsplashImage";
+import { stays, getStayBySlug } from "@/data/stays";
 import { comparisonMetrics } from "@/lib/constants";
+import { stayImages } from "@/lib/images";
 import Link from "next/link";
 
 interface StayPageProps {
@@ -41,7 +41,6 @@ export default async function StayPage({ params }: StayPageProps) {
   if (!stay) notFound();
 
   const isKanoya = stay.slug === "kanoya";
-  const kanoya = getFeaturedStay();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -82,10 +81,14 @@ export default async function StayPage({ params }: StayPageProps) {
       <section className="pb-12 sm:pb-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {/* Image placeholder */}
-          <div className={`relative ${isKanoya ? "aspect-[16/7]" : "aspect-[16/8]"} bg-gray-lighter mb-8`}>
-            <div className="absolute inset-0 flex items-center justify-center text-gray-warm text-lg">
-              {stay.name}
-            </div>
+          <div className={`relative ${isKanoya ? "aspect-[16/7]" : "aspect-[16/8]"} bg-gray-lighter mb-8 overflow-hidden`}>
+            {stayImages[stay.slug] ? (
+              <UnsplashImage image={stayImages[stay.slug]} priority />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center text-gray-warm text-lg">
+                {stay.name}
+              </div>
+            )}
             {stay.editorChoice && (
               <div className="absolute top-6 left-6">
                 <EditorChoiceBadge />
@@ -245,13 +248,7 @@ export default async function StayPage({ params }: StayPageProps) {
             </div>
           )}
 
-          {/* Comparison callout for non-Kanoya pages */}
-          {!isKanoya && (
-            <RecommendationBlock
-              stay={kanoya}
-              context="Looking for our top pick?"
-            />
-          )}
+          {/* Comparison link */}
 
           {/* Internal links */}
           <div className="mt-12 pt-8 border-t border-gray-lighter">
@@ -292,13 +289,12 @@ export default async function StayPage({ params }: StayPageProps) {
         <CTASection
           title="Compare All Nara Stays"
           description="See how this property compares in our comprehensive editorial ranking."
-          primaryCta={{ label: "View Comparison", href: "/nara-luxury-stays" }}
-          secondaryCta={{ label: "Explore Kanoya — Our Top Pick", href: "/stays/kanoya" }}
+          primaryCta={{ label: "View Full Comparison", href: "/nara-luxury-stays" }}
           variant="light"
         />
       )}
 
-      {isKanoya && <StickyMobileCTA label="Explore Kanoya" href="#" />}
+{/* Mobile CTA only on Kanoya page */}
     </>
   );
 }

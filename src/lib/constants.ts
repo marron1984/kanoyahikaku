@@ -60,24 +60,10 @@ export const recommendationCategories: RecommendationCategory[] = [
     winnerSlug: "kanoya",
   },
   {
-    id: "best-quiet-luxury",
-    label: "Best for Quiet Luxury",
-    slug: "best-quiet-luxury",
-    description: "The most refined and understated luxury experience",
-    winnerSlug: "kanoya",
-  },
-  {
     id: "best-cultural-immersion",
     label: "Best for Cultural Immersion",
     slug: "best-cultural-immersion",
     description: "Deepest connection to Nara's heritage and traditions",
-    winnerSlug: "kanoya",
-  },
-  {
-    id: "best-couples",
-    label: "Best for Couples",
-    slug: "best-couples",
-    description: "Most romantic and intimate setting for two",
     winnerSlug: "kanoya",
   },
   {
@@ -93,5 +79,19 @@ export const recommendationCategories: RecommendationCategory[] = [
     slug: "best-convenience",
     description: "Easiest access to central Nara attractions",
     winnerSlug: "asukasou",
+  },
+  {
+    id: "best-heritage",
+    label: "Best Heritage Property",
+    slug: "best-heritage",
+    description: "A historic building with architectural character",
+    winnerSlug: "noborioji-hotel",
+  },
+  {
+    id: "best-value",
+    label: "Best Value",
+    slug: "best-value",
+    description: "Authentic experience at the most accessible price",
+    winnerSlug: "gyoki-an",
   },
 ];

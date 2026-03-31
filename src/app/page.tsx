@@ -11,6 +11,7 @@ import { getFeaturedStay, getStaysSorted } from "@/data/stays";
 import { experiences } from "@/data/experiences";
 import { getFeaturedArticles } from "@/lib/articles-unified";
 import { globalFaqs } from "@/data/faqs";
+import { heroHome } from "@/lib/images";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -37,7 +38,8 @@ export default function HomePage() {
         title="Where to Stay in Nara for a More Meaningful Experience"
         description="Nara is more than a day trip. For travelers who seek cultural depth, quiet luxury, and the Japan they imagined — staying overnight changes everything. We compare the best."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
-        secondaryCta={{ label: "Explore Kanoya", href: "/stays/kanoya" }}
+        secondaryCta={{ label: "Why Stay Overnight?", href: "/journal/how-many-nights-to-spend-in-nara" }}
+        backgroundImage={heroHome.src}
       />
 
       {/* Featured Property */}
@@ -123,10 +125,10 @@ export default function HomePage() {
             {[
               { label: "Best for Couples", description: "Intimate, romantic, and beautifully private", pick: "Kanoya", href: "/stays/kanoya" },
               { label: "Best for Cultural Depth", description: "Immersive heritage and authentic tradition", pick: "Kanoya", href: "/stays/kanoya" },
-              { label: "Best for Quiet Luxury", description: "Refined restraint over flashy excess", pick: "Kanoya", href: "/stays/kanoya" },
-              { label: "Best for First-Time Visitors", description: "The definitive Nara overnight experience", pick: "Kanoya", href: "/stays/kanoya" },
               { label: "Best for Design Lovers", description: "Contemporary Japanese aesthetics", pick: "Nara Komachi", href: "/stays/nara-komachi" },
               { label: "Best for Convenience", description: "Steps from Nara Park and major temples", pick: "Asukasou", href: "/stays/asukasou" },
+              { label: "Best for Traditional Ryokan", description: "Classic tatami rooms and onsen bathing", pick: "Asukasou", href: "/stays/asukasou" },
+              { label: "Best on a Budget", description: "Authentic machiya atmosphere, accessible pricing", pick: "Gyoki-an", href: "/stays/gyoki-an" },
             ].map((cat) => (
               <Link
                 key={cat.label}
@@ -186,10 +188,10 @@ export default function HomePage() {
 
       {/* Final CTA */}
       <CTASection
-        title="Ready to Experience Nara Differently?"
-        description="Kanoya is our top-rated stay for travelers seeking cultural depth, quiet luxury, and a truly meaningful experience in Nara."
-        primaryCta={{ label: "Explore Kanoya", href: "/stays/kanoya" }}
-        secondaryCta={{ label: "Compare All Stays", href: "/nara-luxury-stays" }}
+        title="Find the Right Stay for Your Nara Trip"
+        description="Compare five premium properties across experience depth, design, cultural authenticity, and more."
+        primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
+        secondaryCta={{ label: "Read the Journal", href: "/journal" }}
       />
     </>
   );

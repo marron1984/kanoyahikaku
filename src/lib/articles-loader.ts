@@ -69,22 +69,11 @@ function estimateReadingTime(text: string): string {
 function externalToArticle(ext: ExternalArticle): Article {
   const sections = parseMarkdownToSections(ext.body_markdown);
 
-  // Determine if Kanoya should be featured based on content
-  const mentionsKanoya =
-    ext.body_markdown.toLowerCase().includes("kanoya") ||
-    ext.category === "Accommodation & Stays";
+  // Only feature Kanoya if the article explicitly mentions it by name
+  const mentionsKanoya = ext.body_markdown.toLowerCase().includes("kanoya");
 
-  // Find the section that mentions Kanoya and attach a recommendation
-  const enrichedSections = sections.map((section) => {
-    if (
-      mentionsKanoya &&
-      section.content.toLowerCase().includes("kanoya") &&
-      !section.recommendationSlug
-    ) {
-      return { ...section, recommendationSlug: "kanoya" };
-    }
-    return section;
-  });
+  // Keep sections as-is — no automatic recommendation injection
+  const enrichedSections = sections;
 
   // Extract first paragraph as excerpt
   const firstContent = sections[0]?.content || "";
