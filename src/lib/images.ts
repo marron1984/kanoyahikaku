@@ -1,7 +1,11 @@
 /**
  * Curated image library using Unsplash free photos.
  * All images are free to use under the Unsplash License.
- * Attribution is provided in the site footer and on this file.
+ *
+ * Photo credits:
+ *   Timo Volz, Ken Li, Ben George, Diana Lisunova, Yosuke Ota,
+ *   Kouji Tsuru, Zeke Tucker, Peter Thomas, Andrea De Santis,
+ *   PJH, Rafael AS Martins
  */
 
 export interface SiteImage {
@@ -14,157 +18,150 @@ export interface SiteImage {
 const unsplash = (id: string, w = 1200, q = 80) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
 
-// --- Hero / Homepage ---
+// --- Hero / Homepage: Nara deer + autumn leaves ---
 export const heroHome: SiteImage = {
   src: unsplash("photo-1545569341-9eb8b30979d9", 1600, 80),
-  alt: "Deer resting peacefully in Nara Park surrounded by autumn trees",
-  credit: "Sora Sagano",
-  creditUrl: "https://unsplash.com/@sorasagano",
-};
-
-// --- Nara Deer ---
-export const naraDeer: SiteImage = {
-  src: unsplash("photo-1528360983277-13d401cdc186", 1200, 80),
-  alt: "Deer in Nara Park at dawn",
+  alt: "Deer resting in Nara Park surrounded by autumn maple leaves",
   credit: "Timo Volz",
   creditUrl: "https://unsplash.com/@magicpattern",
 };
 
-export const naraDeerClose: SiteImage = {
-  src: unsplash("photo-1524758631624-e2822e304c36", 800, 80),
-  alt: "Close-up of a Nara deer in soft light",
-  credit: "Christoph Schmid",
-  creditUrl: "https://unsplash.com/@chriss83",
+// --- Nara Deer close-up ---
+export const naraDeer: SiteImage = {
+  src: unsplash("photo-1687279764816-73a0e63284a1", 1200, 80),
+  alt: "Close-up of a deer with antlers in Nara, Japan",
+  credit: "Ken Li",
+  creditUrl: "https://unsplash.com/@kenli0893",
 };
 
-// --- Todai-ji Temple ---
+// --- Todai-ji Temple reflecting in water ---
 export const todaiji: SiteImage = {
-  src: unsplash("photo-1590559899731-a382cb71f1f5", 1200, 80),
-  alt: "Todai-ji temple exterior in Nara, Japan",
-  credit: "Alejandro Luengo",
-  creditUrl: "https://unsplash.com/@aluengo91",
+  src: unsplash("photo-1738350972741-7a0aeedc94e3", 1200, 80),
+  alt: "Todai-ji temple reflecting in a calm lake, Nara",
+  credit: "Ben George",
+  creditUrl: "https://unsplash.com/@bgphotography",
 };
 
-// --- Kasuga Taisha / Stone lanterns ---
+// --- Stone lantern, shrine path ---
 export const kasugaLanterns: SiteImage = {
-  src: unsplash("photo-1478436127897-769e1b3f0f36", 1200, 80),
-  alt: "Stone lanterns along a forest path at a Japanese shrine",
-  credit: "Roméo A.",
-  creditUrl: "https://unsplash.com/@gronemo",
+  src: unsplash("photo-1671164877245-0a79c2979b4a", 1200, 80),
+  alt: "Moss-covered stone lantern at a Japanese shrine in autumn",
+  credit: "Diana Lisunova",
+  creditUrl: "https://unsplash.com/@dianalisunova",
 };
 
 // --- Japanese ryokan / tatami room ---
 export const ryokanInterior: SiteImage = {
-  src: unsplash("photo-1580237541049-2d715a09486e", 1200, 80),
-  alt: "Traditional Japanese room with tatami mats and shoji screens",
+  src: unsplash("photo-1729765913537-1e1f9e498bf0", 1200, 80),
+  alt: "Traditional Japanese room with shoji screens and tatami mats",
   credit: "Yosuke Ota",
   creditUrl: "https://unsplash.com/@y0ta",
 };
 
-// --- Japanese garden ---
+// --- Japanese wooden corridor / architecture ---
+export const architectureDetail: SiteImage = {
+  src: unsplash("photo-1731916712068-f0b67e4e07d9", 1200, 80),
+  alt: "Long wooden corridor in traditional Japanese architecture",
+  credit: "Kouji Tsuru",
+  creditUrl: "https://unsplash.com/@pafuxu",
+};
+
+// --- Japanese garden: zen, raked sand ---
 export const japaneseGarden: SiteImage = {
-  src: unsplash("photo-1464823063530-08f10ed1a2dd", 1200, 80),
-  alt: "Tranquil Japanese moss garden with stone path",
-  credit: "Sven Brandsma",
-  creditUrl: "https://unsplash.com/@seffen99",
+  src: unsplash("photo-1734614797918-68e972755d14", 1200, 80),
+  alt: "Tranquil Japanese garden with raked sand and moss",
+  credit: "PJH",
+  creditUrl: "https://unsplash.com/@pjh",
 };
 
 // --- Japanese food / kaiseki ---
 export const kaisekiDining: SiteImage = {
-  src: unsplash("photo-1553621042-f6e147245754", 1200, 80),
-  alt: "Japanese multi-course kaiseki dinner with seasonal ingredients",
-  credit: "Jiarong Deng",
-  creditUrl: "https://unsplash.com/@jiarongdeng",
+  src: unsplash("photo-1735907364728-043cf94f7193", 1200, 80),
+  alt: "Elegant Japanese multi-course dinner with seasonal presentation",
+  credit: "Kouji Tsuru",
+  creditUrl: "https://unsplash.com/@pafuxu",
 };
 
-// --- Autumn foliage ---
-export const autumnFoliage: SiteImage = {
-  src: unsplash("photo-1576675466969-38eeae4b41f6", 1200, 80),
-  alt: "Red Japanese temple structure surrounded by autumn foliage",
-  credit: "Belle Co",
-  creditUrl: "https://unsplash.com/@belleco",
-};
-
-// --- Cherry blossom ---
+// --- Cherry blossom + temple ---
 export const cherryBlossom: SiteImage = {
-  src: unsplash("photo-1522383225653-ed111181a951", 1200, 80),
+  src: unsplash("photo-1745356596048-62ae0261feab", 1200, 80),
   alt: "Cherry blossoms framing a traditional Japanese temple",
-  credit: "Tianshu Liu",
-  creditUrl: "https://unsplash.com/@tianshu",
+  credit: "Zeke Tucker",
+  creditUrl: "https://unsplash.com/@zeketucker",
 };
 
-// --- Night lantern street ---
+// --- Night lantern-lit alleyway ---
 export const nightLanternStreet: SiteImage = {
-  src: unsplash("photo-1553621042-f6e147245754", 1200, 80),
-  alt: "Lantern-lit Japanese alleyway at night",
-  credit: "Rafael AS Martins",
-  creditUrl: "https://unsplash.com/@rafaelmartins",
+  src: unsplash("photo-1741441365084-fdd26fa4aa64", 1200, 80),
+  alt: "Cozy lantern-lit alleyway in Japan at night",
+  credit: "Peter Thomas",
+  creditUrl: "https://unsplash.com/@lifeof_peter_",
 };
 
-export const nightStreet: SiteImage = {
-  src: unsplash("photo-1545569341-9eb8b30979d9", 1200, 80),
-  alt: "Quiet Japanese street at dusk",
-  credit: "Sora Sagano",
-  creditUrl: "https://unsplash.com/@sorasagano",
+// --- Naramachi-style traditional street ---
+export const traditionalStreet: SiteImage = {
+  src: unsplash("photo-1743690892536-24e70ce39bfe", 1200, 80),
+  alt: "Narrow alleyway in a historic Japanese town",
+  credit: "Diego Retamal",
+  creditUrl: "https://unsplash.com/@diegoretamal",
 };
 
-// --- Japanese architecture detail ---
-export const architectureDetail: SiteImage = {
-  src: unsplash("photo-1480796927426-f609979314bd", 1200, 80),
-  alt: "Traditional Japanese wooden architecture detail",
-  credit: "Luca Bravo",
-  creditUrl: "https://unsplash.com/@lucabravo",
+// --- Couple in kimono / romantic ---
+export const romanticJapan: SiteImage = {
+  src: unsplash("photo-1711367465953-c6e26c83bfec", 1200, 80),
+  alt: "Couple in traditional kimono with umbrellas in Kyoto",
+  credit: "Andrea De Santis",
+  creditUrl: "https://unsplash.com/@santesson89",
 };
 
 // --- Tea ceremony ---
 export const teaCeremony: SiteImage = {
-  src: unsplash("photo-1536256263959-770b48d82b0a", 1200, 80),
-  alt: "Japanese matcha tea preparation in a ceramic bowl",
-  credit: "Masaaki Komori",
-  creditUrl: "https://unsplash.com/@gaspanik",
+  src: unsplash("photo-1536411396596-afed9fa3c1b2", 1200, 80),
+  alt: "Woman seated in a traditional Japanese tea ceremony room",
+  credit: "Unsplash",
+  creditUrl: "https://unsplash.com/photos/lscGvpiDBLA",
 };
 
-// --- Romantic / couple-like calm scene ---
-export const romanticGarden: SiteImage = {
-  src: unsplash("photo-1490806843957-31f4c9a91c65", 1200, 80),
-  alt: "Serene Japanese garden view at golden hour",
-  credit: "Atul Vinayak",
-  creditUrl: "https://unsplash.com/@atulvi",
+// --- Five deer group at Nara Park ---
+export const deerGroup: SiteImage = {
+  src: unsplash("photo-1481727835183-3091fbb3c8bd", 1200, 80),
+  alt: "Group of deer resting in Nara Park",
+  credit: "Carl Flor",
+  creditUrl: "https://unsplash.com/@carlflor",
 };
 
 // --- Mapped by use context for easy component access ---
 export const siteImages = {
   heroHome,
   naraDeer,
-  naraDeerClose,
+  deerGroup,
   todaiji,
   kasugaLanterns,
   ryokanInterior,
   japaneseGarden,
   kaisekiDining,
-  autumnFoliage,
   cherryBlossom,
   nightLanternStreet,
-  nightStreet,
+  traditionalStreet,
   architectureDetail,
   teaCeremony,
-  romanticGarden,
+  romanticJapan,
 } as const;
 
 /** Map stay slugs to their hero images */
 export const stayImages: Record<string, SiteImage> = {
   kanoya: ryokanInterior,
   "nara-komachi": architectureDetail,
-  asukasou: japaneseGarden,
-  "noborioji-hotel": todaiji,
-  "gyoki-an": kasugaLanterns,
+  asukasou: todaiji,
+  "noborioji-hotel": cherryBlossom,
+  "gyoki-an": traditionalStreet,
 };
 
 /** Map experience slugs to their hero images */
 export const experienceImages: Record<string, SiteImage> = {
-  "early-morning-deer-walk": naraDeer,
-  "quiet-nara-at-night": nightStreet,
+  "early-morning-deer-walk": deerGroup,
+  "quiet-nara-at-night": nightLanternStreet,
   "cultural-immersion-stay": kasugaLanterns,
-  "romantic-stay-in-nara": romanticGarden,
+  "romantic-stay-in-nara": romanticJapan,
   "slow-travel-in-nara": japaneseGarden,
 };
