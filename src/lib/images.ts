@@ -1,8 +1,16 @@
 /**
  * Curated image library using Unsplash free photos.
  * All images are free to use under the Unsplash License.
- * Photo IDs verified from public GitHub repositories (travelchat-ai, Travel-Agency,
- * l-nder-entdecker, Travel-Guide, WhereToNext, kreatale-landing, 268542).
+ *
+ * EVERY photo ID below was extracted from live public GitHub repositories
+ * where it was used in a Japan-related context. Source repos are cited in comments.
+ * Repos scraped: ImIshan7/Zen-Traveler-Blog-React-Application,
+ * moechannel/AA-Japan-Tours, asa9874/web-hub, dudi2009/japan-web,
+ * Team-Rocket-Codefest/frontend, anusha2004319/Travel-Agency,
+ * Jannik-Jonen/l-nder-entdecker, tomoki013/tabidea,
+ * sandeepnaikg/Travel-Booking_App-, code-well0/trip-planner,
+ * EnzoCinco14/MYPERSONALWEBSITE, lmaldonadoch/vacation-planner,
+ * Vattghern203/yonaka, AV1080p/tourist-dapp-payment-integration.
  */
 
 export interface SiteImage {
@@ -15,53 +23,66 @@ export interface SiteImage {
 const unsplash = (id: string, w = 1200, q = 80) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
 
-// --- Hero / Homepage: Japan temple golden light ---
-// Verified in: travelchat-ai, kreatale-landing, rapidophilia, l-nder-entdecker (Kyoto)
+// ---------------------------------------------------------------------------
+// 1. Hero / Homepage — Kyoto golden temple
+// Found in: AA-Japan-Tours, Zen-Traveler, Travel-Agency, l-nder-entdecker,
+//           Team-Rocket-Codefest (Kyoto), dudi2009/japan-web
+// ---------------------------------------------------------------------------
 export const heroHome: SiteImage = {
   src: unsplash("photo-1493976040374-85c8e12f0c0e", 1600, 80),
   alt: "Traditional Japanese temple with warm golden light",
   credit: "Sorasak",
-  creditUrl: "https://unsplash.com/@banisakdr",
+  creditUrl: "https://unsplash.com/@boontohhgraphy",
 };
 
-// --- Japan scenic (deer park / nature) ---
-// Verified in: easyo1145/268542 (Japan tour category)
+// ---------------------------------------------------------------------------
+// 2. Nara deer park
+// Found in: asa9874/web-hub (Nara Park with deer)
+// ---------------------------------------------------------------------------
 export const naraDeer: SiteImage = {
-  src: unsplash("photo-1524413840807-0c3cb6fa808d", 1200, 80),
-  alt: "Scenic view of Japanese nature and parkland",
+  src: unsplash("photo-1552280552-7fdf2dd2c5b1", 1200, 80),
+  alt: "Deer in Nara Park, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japan cultural landmark ---
-// Verified in: easyo1145/268542, sachin-viol/Travel-Agency (Japan tour)
+// ---------------------------------------------------------------------------
+// 3. Todai-ji temple, Nara
+// Found in: asa9874/web-hub (Todai Temple)
+// ---------------------------------------------------------------------------
 export const todaiji: SiteImage = {
-  src: unsplash("photo-1526481280693-3bfa7568e0f3", 1200, 80),
-  alt: "Iconic Japanese cultural landmark",
+  src: unsplash("photo-1526913260776-1dccd50dd580", 1200, 80),
+  alt: "Todai-ji temple in Nara, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Kyoto temples ---
-// Verified in: Jannik-Jonen/l-nder-entdecker (Kyoto Temples blog post)
+// ---------------------------------------------------------------------------
+// 4. Torii gates / shrine
+// Found in: AA-Japan-Tours (Nature), Zen-Traveler, EnzoCinco14
+// ---------------------------------------------------------------------------
 export const kasugaLanterns: SiteImage = {
-  src: unsplash("photo-1526045612212-70caf35c14df", 1200, 80),
-  alt: "Historic temple architecture in Kyoto, Japan",
+  src: unsplash("photo-1478436127897-769e1b3f0f36", 1200, 80),
+  alt: "Vermillion torii gates at a Japanese shrine",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Hotel / ryokan interior ---
-// Verified in: Jannik-Jonen/l-nder-entdecker (Pestana Palace hotel)
+// ---------------------------------------------------------------------------
+// 5. Nara cultural landmark (alternate)
+// Found in: dudi2009/japan-web (Nara)
+// ---------------------------------------------------------------------------
 export const ryokanInterior: SiteImage = {
-  src: unsplash("photo-1566073771259-6a8506099945", 1200, 80),
-  alt: "Elegant luxury hotel interior",
+  src: unsplash("photo-1550303435-1703d8811aaa", 1200, 80),
+  alt: "Nara cultural landmark, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Bamboo grove path ---
-// Verified in: ilicstevan89-ux/WhereToNext, sachin-viol/Travel-Agency (Japan)
+// ---------------------------------------------------------------------------
+// 6. Bamboo grove path, Arashiyama
+// Found in: AA-Japan-Tours (Culture), Travel-Agency (Japan culture/cuisine)
+// ---------------------------------------------------------------------------
 export const architectureDetail: SiteImage = {
   src: unsplash("photo-1528360983277-13d401cdc186", 1200, 80),
   alt: "Bamboo grove pathway in Arashiyama, Japan",
@@ -69,8 +90,11 @@ export const architectureDetail: SiteImage = {
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japanese garden / bamboo ---
-// Verified in: sachin-viol/Travel-Agency (Japanese Wonders)
+// ---------------------------------------------------------------------------
+// 7. Japanese bamboo forest / garden
+// Found in: Zen-Traveler (Kyoto hero), EnzoCinco14 (Mt Fuji + cherry),
+//           dudi2009/japan-web (Kyoto), Vattghern203/yonaka, Travel-Booking_App-
+// ---------------------------------------------------------------------------
 export const japaneseGarden: SiteImage = {
   src: unsplash("photo-1545569341-9eb8b30979d9", 1200, 80),
   alt: "Serene bamboo forest path in Japan",
@@ -78,26 +102,32 @@ export const japaneseGarden: SiteImage = {
   creditUrl: "https://unsplash.com",
 };
 
-// --- Restaurant / dining ---
-// Verified in: Jannik-Jonen/l-nder-entdecker (Belcanto Restaurant)
+// ---------------------------------------------------------------------------
+// 8. Kaiseki / Japanese fine dining
+// Found in: asa9874/web-hub (Kaiseki formal dinner)
+// ---------------------------------------------------------------------------
 export const kaisekiDining: SiteImage = {
-  src: unsplash("photo-1517248135467-4c7edcad34c4", 1200, 80),
-  alt: "Elegant dining restaurant interior",
+  src: unsplash("photo-1517999572726-f0f0a8c82aa7", 1200, 80),
+  alt: "Elegant kaiseki formal dinner setting",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japan scenery ---
-// Verified in: sachin-viol/Travel-Agency (Japanese Wonders)
+// ---------------------------------------------------------------------------
+// 9. Cherry blossom / Osaka
+// Found in: AA-Japan-Tours (Nature), Team-Rocket-Codefest (Osaka)
+// ---------------------------------------------------------------------------
 export const cherryBlossom: SiteImage = {
-  src: unsplash("photo-1504198322253-cfa87a0ff60f", 1200, 80),
-  alt: "Beautiful Japanese scenery with natural landscape",
+  src: unsplash("photo-1522383225653-ed111181a951", 1200, 80),
+  alt: "Cherry blossoms in full bloom in Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Tokyo cityscape at night ---
-// Verified in: nkopp-cmd/travelchat-ai (Tokyo)
+// ---------------------------------------------------------------------------
+// 10. Tokyo cityscape at night
+// Found in: AA-Japan-Tours (Food & Dining), Zen-Traveler, victormata77/AsiaTrip25
+// ---------------------------------------------------------------------------
 export const nightLanternStreet: SiteImage = {
   src: unsplash("photo-1540959733332-eab4deabeeaf", 1200, 80),
   alt: "Tokyo cityscape illuminated at night",
@@ -105,77 +135,98 @@ export const nightLanternStreet: SiteImage = {
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japan iconic view (Tokyo Tower) ---
-// Verified in: Jannik-Jonen/l-nder-entdecker (Japan Country)
+// ---------------------------------------------------------------------------
+// 11. Iconic Tokyo Tower view
+// Found in: l-nder-entdecker (Japan country), AA-Japan-Tours (Destinations)
+// ---------------------------------------------------------------------------
 export const traditionalStreet: SiteImage = {
   src: unsplash("photo-1480796927426-f609979314bd", 1200, 80),
   alt: "Iconic Tokyo Tower view at night with city lights",
-  credit: "Unsplash",
-  creditUrl: "https://unsplash.com",
+  credit: "Jezael Melgoza",
+  creditUrl: "https://unsplash.com/@jezar",
 };
 
-// --- Classic Japan ---
-// Verified in: harshitpambhar/Travel-Guide (Classic Japan Package)
+// ---------------------------------------------------------------------------
+// 12. Kimono / Gion cultural scene
+// Found in: AA-Japan-Tours (Culture inline), asa9874/web-hub (shrine)
+// ---------------------------------------------------------------------------
 export const romanticJapan: SiteImage = {
-  src: unsplash("photo-1558981403-c5f9899a28bc", 1200, 80),
-  alt: "Classic Japanese cultural scene",
+  src: unsplash("photo-1576675466969-38ff5b155898", 1200, 80),
+  alt: "Cultural scene in historic Japanese district",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Classic Japan (alternate) ---
-// Verified in: harshitpambhar/Travel-Guide (Classic Japan Package)
+// ---------------------------------------------------------------------------
+// 13. Japanese sushi / food platter
+// Found in: EnzoCinco14/MYPERSONALWEBSITE (Japanese Sushi Platter),
+//           AA-Japan-Tours (Food & Dining)
+// ---------------------------------------------------------------------------
 export const teaCeremony: SiteImage = {
-  src: unsplash("photo-1519167758481-83f550bb49b3", 1200, 80),
-  alt: "Traditional Japanese cultural experience",
+  src: unsplash("photo-1579871494447-9811cf80d66c", 1200, 80),
+  alt: "Japanese sushi and culinary experience",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japan scenic (same as naraDeer) ---
+// ---------------------------------------------------------------------------
+// 14. Nara deer group (same park, different angle)
+// Found in: Zen-Traveler (Nara: "Ancient temples and friendly deer")
+// ---------------------------------------------------------------------------
 export const deerGroup: SiteImage = {
-  src: unsplash("photo-1524413840807-0c3cb6fa808d", 1200, 80),
-  alt: "Japanese nature and parkland scenery",
+  src: unsplash("photo-1565618754154-c8011e5df2a6", 1200, 80),
+  alt: "Deer and ancient temples in Nara, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japan urban / Osaka ---
-// Verified in: nkopp-cmd/travelchat-ai
+// ---------------------------------------------------------------------------
+// 15. Osaka nightlife / Dotonbori
+// Found in: Zen-Traveler (Osaka: street food & nightlife), AA-Japan-Tours
+// ---------------------------------------------------------------------------
 export const japaneseFoodDetail: SiteImage = {
   src: unsplash("photo-1590559899731-a382839e5549", 1200, 80),
-  alt: "Vibrant Japanese urban street scene",
+  alt: "Vibrant neon-lit street in Osaka, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Kyoto temples (same as kasugaLanterns) ---
+// ---------------------------------------------------------------------------
+// 16. Fushimi Inari torii gates (alternate)
+// Found in: AA-Japan-Tours (Travel Tips)
+// ---------------------------------------------------------------------------
 export const toriiGate: SiteImage = {
-  src: unsplash("photo-1526045612212-70caf35c14df", 1200, 80),
-  alt: "Path through Kyoto temple grounds",
+  src: unsplash("photo-1536098561742-ca998e48cbcc", 1200, 80),
+  alt: "Path through torii gates at Japanese shrine",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Travel scenery ---
-// Verified in: nkopp-cmd/travelchat-ai
+// ---------------------------------------------------------------------------
+// 17. Hakone / natural scenery
+// Found in: Zen-Traveler (Hakone: hot springs and Mt Fuji views)
+// ---------------------------------------------------------------------------
 export const autumnFoliage: SiteImage = {
-  src: unsplash("photo-1536599018102-9f803c140fc1", 1200, 80),
-  alt: "Scenic travel destination landscape",
+  src: unsplash("photo-1492571350019-22de08371fd3", 1200, 80),
+  alt: "Hot springs and mountain scenery in Hakone, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Nature / mountains ---
-// Verified in: nkopp-cmd/travelchat-ai
+// ---------------------------------------------------------------------------
+// 18. Mount Fuji with cherry blossoms / pagoda
+// Found in: Zen-Traveler (Mt Fuji), l-nder-entdecker, Team-Rocket-Codefest
+// ---------------------------------------------------------------------------
 export const templePagoda: SiteImage = {
-  src: unsplash("photo-1470004914212-05527e49370b", 1200, 80),
-  alt: "Stunning natural landscape with mountains",
+  src: unsplash("photo-1490806843957-31f4c9a91c65", 1200, 80),
+  alt: "Mount Fuji with cherry blossoms and traditional pagoda",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japan bamboo (same as architectureDetail) ---
+// ---------------------------------------------------------------------------
+// 19. Bamboo grove (same as architectureDetail — Arashiyama)
+// ---------------------------------------------------------------------------
 export const naraStreetscape: SiteImage = {
   src: unsplash("photo-1528360983277-13d401cdc186", 1200, 80),
   alt: "Bamboo grove path in Arashiyama, Kyoto",
@@ -183,55 +234,68 @@ export const naraStreetscape: SiteImage = {
   creditUrl: "https://unsplash.com",
 };
 
-// --- Travel / exploration ---
-// Verified in: nkopp-cmd/travelchat-ai
+// ---------------------------------------------------------------------------
+// 20. Japan travel / exploration
+// Found in: AA-Japan-Tours (Travel Tips)
+// ---------------------------------------------------------------------------
 export const japanTravel: SiteImage = {
-  src: unsplash("photo-1538485399081-7191377e8241", 1200, 80),
-  alt: "Travel exploration scenery",
+  src: unsplash("photo-1551641506-ee5bf4cb45f1", 1200, 80),
+  alt: "Japan travel and exploration scenery",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Classic Japan (same as romanticJapan) ---
+// ---------------------------------------------------------------------------
+// 21. Couple / cultural Japan (Kyoto travel)
+// Found in: code-well0/trip-planner (Kyoto), AA-Japan-Tours (Travel Tips)
+// ---------------------------------------------------------------------------
 export const coupleJapan: SiteImage = {
-  src: unsplash("photo-1558981403-c5f9899a28bc", 1200, 80),
-  alt: "Classic Japanese cultural scene",
+  src: unsplash("photo-1524413840807-0c3cb6fa808d", 1200, 80),
+  alt: "Kyoto classical temples and gardens",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Cultural scenery ---
-// Verified in: nkopp-cmd/travelchat-ai
+// ---------------------------------------------------------------------------
+// 22. Japan culture / art
+// Found in: AA-Japan-Tours (Culture inline)
+// ---------------------------------------------------------------------------
 export const japaneseArt: SiteImage = {
-  src: unsplash("photo-1525625293386-3f8f99389edd", 1200, 80),
-  alt: "Cultural travel destination",
+  src: unsplash("photo-1526481280693-3bfa7568e0f3", 1200, 80),
+  alt: "Japanese cultural landmark and art",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Destination scenery ---
-// Verified in: nkopp-cmd/travelchat-ai
+// ---------------------------------------------------------------------------
+// 23. Dotonbori / festival atmosphere (Osaka neon)
+// Found in: asa9874/web-hub (Dotonbori nighttime street)
+// ---------------------------------------------------------------------------
 export const japaneseFestival: SiteImage = {
-  src: unsplash("photo-1508009603885-50cf7c579365", 1200, 80),
-  alt: "Vibrant travel destination scenery",
+  src: unsplash("photo-1522383507921-86a62d0be906", 1200, 80),
+  alt: "Dotonbori neon-lit nighttime street in Osaka",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japan cityscape ---
-// Verified in: sachin-viol/Travel-Agency (Japanese Wonders)
+// ---------------------------------------------------------------------------
+// 24. Tokyo / Shibuya cityscape
+// Found in: AA-Japan-Tours (Destinations), Team-Rocket-Codefest (Tokyo)
+// ---------------------------------------------------------------------------
 export const historicNara: SiteImage = {
-  src: unsplash("photo-1503899036084-c55cdd92da26", 1200, 80),
-  alt: "Japanese city skyline with modern architecture",
+  src: unsplash("photo-1542051841857-5f90071e7989", 1200, 80),
+  alt: "Busy Shibuya crossing in Tokyo at night",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Travel planning / destination ---
-// Verified in: nkopp-cmd/travelchat-ai
+// ---------------------------------------------------------------------------
+// 25. Tokyo cityscape / modern Japan
+// Found in: AA-Japan-Tours (Modern Japan), Team-Rocket-Codefest (Tokyo)
+// ---------------------------------------------------------------------------
 export const travelPlanning: SiteImage = {
-  src: unsplash("photo-1596178065887-1198b6148b2b", 1200, 80),
-  alt: "Travel destination overview",
+  src: unsplash("photo-1503899036084-c55cdd92da26", 1200, 80),
+  alt: "Tokyo cityscape with modern skyscrapers",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
