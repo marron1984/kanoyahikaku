@@ -7,7 +7,7 @@ import StayCard from "@/components/StayCard";
 import UnsplashImage from "@/components/UnsplashImage";
 import { experiences, getExperienceBySlug } from "@/data/experiences";
 import { getStayBySlug } from "@/data/stays";
-import { experienceImages } from "@/lib/images";
+import { experienceImages, toriiGate } from "@/lib/images";
 import Link from "next/link";
 
 interface ExperiencePageProps {
@@ -162,6 +162,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
         title="Plan Your Nara Experience"
         description="Compare stays that put you closest to the experiences that matter most."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
+        backgroundImage={toriiGate}
       />
     </>
   );

@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 import UnsplashImage from "@/components/UnsplashImage";
 import { stays, getStayBySlug } from "@/data/stays";
 import { comparisonMetrics } from "@/lib/constants";
-import { stayImages } from "@/lib/images";
+import { stayImages, nightLanternStreet, japaneseGarden } from "@/lib/images";
 import Link from "next/link";
 
 interface StayPageProps {
@@ -284,13 +284,14 @@ export default async function StayPage({ params }: StayPageProps) {
           description="Kanoya offers a depth of cultural experience, design beauty, and personal hospitality that transforms a visit to Nara into something truly significant."
           primaryCta={{ label: "Check Availability", href: "#" }}
           secondaryCta={{ label: "Compare All Stays", href: "/nara-luxury-stays" }}
+          backgroundImage={nightLanternStreet}
         />
       ) : (
         <CTASection
           title="Compare All Nara Stays"
           description="See how this property compares in our comprehensive editorial ranking."
           primaryCta={{ label: "View Full Comparison", href: "/nara-luxury-stays" }}
-          variant="light"
+          backgroundImage={japaneseGarden}
         />
       )}
 

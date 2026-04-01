@@ -7,7 +7,7 @@ import CTASection from "@/components/CTASection";
 import UnsplashImage from "@/components/UnsplashImage";
 import { getStaysSorted } from "@/data/stays";
 import { recommendationCategories } from "@/lib/constants";
-import { todaiji } from "@/lib/images";
+import { todaiji, romanticJapan } from "@/lib/images";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -156,6 +156,7 @@ export default function ComparisonPage() {
         description="Our journal has in-depth guides, itineraries, and perspectives to help you plan the perfect Nara stay."
         primaryCta={{ label: "Read the Journal", href: "/journal" }}
         secondaryCta={{ label: "View FAQ", href: "/faq" }}
+        backgroundImage={romanticJapan}
       />
     </>
   );
