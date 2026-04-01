@@ -34,7 +34,7 @@ export const heroHome: SiteImage = {
 // Found in: asa9874/web-hub (Nara Park with deer)
 // ---------------------------------------------------------------------------
 export const naraDeer: SiteImage = {
-  src: unsplash("photo-1571204829887-3b8d69e4094d", 1200, 80),
+  src: unsplash("photo-1524413159693-3b841b1c4bb9", 1200, 80),
   alt: "Deer in Nara Park, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
@@ -45,8 +45,8 @@ export const naraDeer: SiteImage = {
 // Found in: asa9874/web-hub (Todai Temple)
 // ---------------------------------------------------------------------------
 export const todaiji: SiteImage = {
-  src: unsplash("photo-1624253321171-1be53e12f5f4", 1200, 80),
-  alt: "Todai-ji temple in Nara, Japan",
+  src: unsplash("photo-1570191935041-923f05351a9a", 1200, 80),
+  alt: "Todai-ji Great Buddha in Nara, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
@@ -90,8 +90,8 @@ export const architectureDetail: SiteImage = {
 //           dudi2009/japan-web (Kyoto), Vattghern203/yonaka, Travel-Booking_App-
 // ---------------------------------------------------------------------------
 export const japaneseGarden: SiteImage = {
-  src: unsplash("photo-1504544750208-dc0358e63f7f", 1200, 80),
-  alt: "Serene Japanese garden in Kyoto",
+  src: unsplash("photo-1589994684942-d66872d82e11", 1200, 80),
+  alt: "Zen rock garden at Ryoan-ji, Kyoto",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
@@ -168,7 +168,7 @@ export const teaCeremony: SiteImage = {
 // Found in: Zen-Traveler (Nara: "Ancient temples and friendly deer")
 // ---------------------------------------------------------------------------
 export const deerGroup: SiteImage = {
-  src: unsplash("photo-1577717903315-1691ae25ab3f", 1200, 80),
+  src: unsplash("photo-1667788000333-4e36f948de9a", 1200, 80),
   alt: "Deer and ancient temples in Nara, Japan",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
@@ -190,8 +190,8 @@ export const japaneseFoodDetail: SiteImage = {
 // Found in: AA-Japan-Tours (Travel Tips)
 // ---------------------------------------------------------------------------
 export const toriiGate: SiteImage = {
-  src: unsplash("photo-1615887023516-9b6c4ad3c178", 1200, 80),
-  alt: "Path through torii gates at Japanese shrine",
+  src: unsplash("photo-1601309584882-680470248bc4", 1200, 80),
+  alt: "Kiyomizu-dera temple gates in Kyoto",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
@@ -266,8 +266,8 @@ export const japaneseArt: SiteImage = {
 // Found in: asa9874/web-hub (Dotonbori nighttime street)
 // ---------------------------------------------------------------------------
 export const japaneseFestival: SiteImage = {
-  src: unsplash("photo-1533759413974-9e15f3b745ac", 1200, 80),
-  alt: "Japanese cultural festival atmosphere",
+  src: unsplash("photo-1590256153835-06900f86532d", 1200, 80),
+  alt: "Osaka Castle and cultural scenery",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
