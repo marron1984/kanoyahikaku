@@ -1,7 +1,8 @@
 /**
  * Curated image library using Unsplash free photos.
  * All images are free to use under the Unsplash License.
- * Photo IDs verified from public GitHub repositories.
+ * Photo IDs verified from public GitHub repositories (travelchat-ai, Travel-Agency,
+ * l-nder-entdecker, Travel-Guide, WhereToNext, kreatale-landing, 268542).
  */
 
 export interface SiteImage {
@@ -14,7 +15,8 @@ export interface SiteImage {
 const unsplash = (id: string, w = 1200, q = 80) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=${q}`;
 
-// --- Hero / Homepage: Kyoto bamboo + temples ---
+// --- Hero / Homepage: Japan temple golden light ---
+// Verified in: travelchat-ai, kreatale-landing, rapidophilia, l-nder-entdecker (Kyoto)
 export const heroHome: SiteImage = {
   src: unsplash("photo-1493976040374-85c8e12f0c0e", 1600, 80),
   alt: "Traditional Japanese temple with warm golden light",
@@ -22,39 +24,44 @@ export const heroHome: SiteImage = {
   creditUrl: "https://unsplash.com/@banisakdr",
 };
 
-// --- Nara Deer close-up ---
+// --- Japan scenic (deer park / nature) ---
+// Verified in: easyo1145/268542 (Japan tour category)
 export const naraDeer: SiteImage = {
-  src: unsplash("photo-1524413159693-3b841b1c4bb9", 1200, 80),
-  alt: "Deer standing in Nara Park, Japan",
+  src: unsplash("photo-1524413840807-0c3cb6fa808d", 1200, 80),
+  alt: "Scenic view of Japanese nature and parkland",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Todai-ji / Great Buddha ---
+// --- Japan cultural landmark ---
+// Verified in: easyo1145/268542, sachin-viol/Travel-Agency (Japan tour)
 export const todaiji: SiteImage = {
-  src: unsplash("photo-1570191935041-923f05351a9a", 1200, 80),
-  alt: "Great Buddha statue at Todai-ji temple, Nara",
+  src: unsplash("photo-1526481280693-3bfa7568e0f3", 1200, 80),
+  alt: "Iconic Japanese cultural landmark",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Fushimi Inari torii gates ---
+// --- Kyoto temples ---
+// Verified in: Jannik-Jonen/l-nder-entdecker (Kyoto Temples blog post)
 export const kasugaLanterns: SiteImage = {
-  src: unsplash("photo-1478436127897-769e1b3f0f36", 1200, 80),
-  alt: "Vermillion torii gates at a Japanese shrine",
-  credit: "Manuel Cosentino",
-  creditUrl: "https://unsplash.com/@manuco",
+  src: unsplash("photo-1526045612212-70caf35c14df", 1200, 80),
+  alt: "Historic temple architecture in Kyoto, Japan",
+  credit: "Unsplash",
+  creditUrl: "https://unsplash.com",
 };
 
-// --- Kiyomizu-dera / Traditional architecture ---
+// --- Hotel / ryokan interior ---
+// Verified in: Jannik-Jonen/l-nder-entdecker (Pestana Palace hotel)
 export const ryokanInterior: SiteImage = {
-  src: unsplash("photo-1601309584882-680470248bc4", 1200, 80),
-  alt: "Traditional Japanese temple architecture with wooden veranda",
+  src: unsplash("photo-1566073771259-6a8506099945", 1200, 80),
+  alt: "Elegant luxury hotel interior",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
 // --- Bamboo grove path ---
+// Verified in: ilicstevan89-ux/WhereToNext, sachin-viol/Travel-Agency (Japan)
 export const architectureDetail: SiteImage = {
   src: unsplash("photo-1528360983277-13d401cdc186", 1200, 80),
   alt: "Bamboo grove pathway in Arashiyama, Japan",
@@ -62,103 +69,113 @@ export const architectureDetail: SiteImage = {
   creditUrl: "https://unsplash.com",
 };
 
-// --- Japanese garden ---
+// --- Japanese garden / bamboo ---
+// Verified in: sachin-viol/Travel-Agency (Japanese Wonders)
 export const japaneseGarden: SiteImage = {
   src: unsplash("photo-1545569341-9eb8b30979d9", 1200, 80),
   alt: "Serene bamboo forest path in Japan",
-  credit: "Timo Volz",
-  creditUrl: "https://unsplash.com/@magicpattern",
+  credit: "Unsplash",
+  creditUrl: "https://unsplash.com",
 };
 
-// --- Japanese food / street food ---
+// --- Restaurant / dining ---
+// Verified in: Jannik-Jonen/l-nder-entdecker (Belcanto Restaurant)
 export const kaisekiDining: SiteImage = {
-  src: unsplash("photo-1533759413974-9e15f3b745ac", 1200, 80),
-  alt: "Colorful Japanese market food display",
+  src: unsplash("photo-1517248135467-4c7edcad34c4", 1200, 80),
+  alt: "Elegant dining restaurant interior",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Cherry blossom ---
+// --- Japan scenery ---
+// Verified in: sachin-viol/Travel-Agency (Japanese Wonders)
 export const cherryBlossom: SiteImage = {
-  src: unsplash("photo-1522383225653-ed111181a951", 1200, 80),
-  alt: "Cherry blossoms in full bloom along a Japanese river",
+  src: unsplash("photo-1504198322253-cfa87a0ff60f", 1200, 80),
+  alt: "Beautiful Japanese scenery with natural landscape",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Pontocho / night alley ---
+// --- Tokyo cityscape at night ---
+// Verified in: nkopp-cmd/travelchat-ai (Tokyo)
 export const nightLanternStreet: SiteImage = {
-  src: unsplash("photo-1552554652-3a5e8c68383e", 1200, 80),
-  alt: "Atmospheric lantern-lit alley in Kyoto at night",
+  src: unsplash("photo-1540959733332-eab4deabeeaf", 1200, 80),
+  alt: "Tokyo cityscape illuminated at night",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Traditional Kamakura street ---
+// --- Japan iconic view (Tokyo Tower) ---
+// Verified in: Jannik-Jonen/l-nder-entdecker (Japan Country)
 export const traditionalStreet: SiteImage = {
-  src: unsplash("photo-1605634543789-9a0d8923f119", 1200, 80),
-  alt: "Traditional Japanese town street with wooden buildings",
+  src: unsplash("photo-1480796927426-f609979314bd", 1200, 80),
+  alt: "Iconic Tokyo Tower view at night with city lights",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Kimono couple in Gion ---
+// --- Classic Japan ---
+// Verified in: harshitpambhar/Travel-Guide (Classic Japan Package)
 export const romanticJapan: SiteImage = {
-  src: unsplash("photo-1542931287-023b922fa89b", 1200, 80),
-  alt: "Person in traditional kimono walking through historic Gion district",
+  src: unsplash("photo-1558981403-c5f9899a28bc", 1200, 80),
+  alt: "Classic Japanese cultural scene",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Senso-ji temple ---
+// --- Classic Japan (alternate) ---
+// Verified in: harshitpambhar/Travel-Guide (Classic Japan Package)
 export const teaCeremony: SiteImage = {
-  src: unsplash("photo-1583212292454-1fe6229603b7", 1200, 80),
-  alt: "Ancient Senso-ji temple entrance with traditional lantern",
+  src: unsplash("photo-1519167758481-83f550bb49b3", 1200, 80),
+  alt: "Traditional Japanese cultural experience",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Nara deer group ---
+// --- Japan scenic (same as naraDeer) ---
 export const deerGroup: SiteImage = {
-  src: unsplash("photo-1524413159693-3b841b1c4bb9", 1200, 80),
-  alt: "Group of deer in Nara Park, Japan",
+  src: unsplash("photo-1524413840807-0c3cb6fa808d", 1200, 80),
+  alt: "Japanese nature and parkland scenery",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Osaka neon / Dotonbori ---
+// --- Japan urban / Osaka ---
+// Verified in: nkopp-cmd/travelchat-ai
 export const japaneseFoodDetail: SiteImage = {
   src: unsplash("photo-1590559899731-a382839e5549", 1200, 80),
-  alt: "Vibrant neon signs of Dotonbori, Osaka",
+  alt: "Vibrant Japanese urban street scene",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Fushimi Inari torii path ---
+// --- Kyoto temples (same as kasugaLanterns) ---
 export const toriiGate: SiteImage = {
-  src: unsplash("photo-1478436127897-769e1b3f0f36", 1200, 80),
-  alt: "Path through vermillion torii gates at a Japanese shrine",
-  credit: "Manuel Cosentino",
-  creditUrl: "https://unsplash.com/@manuco",
+  src: unsplash("photo-1526045612212-70caf35c14df", 1200, 80),
+  alt: "Path through Kyoto temple grounds",
+  credit: "Unsplash",
+  creditUrl: "https://unsplash.com",
 };
 
-// --- Himeji castle ---
+// --- Travel scenery ---
+// Verified in: nkopp-cmd/travelchat-ai
 export const autumnFoliage: SiteImage = {
-  src: unsplash("photo-1549487333-66275812e946", 1200, 80),
-  alt: "Historic Himeji Castle with traditional Japanese architecture",
+  src: unsplash("photo-1536599018102-9f803c140fc1", 1200, 80),
+  alt: "Scenic travel destination landscape",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Mt Fuji ---
+// --- Nature / mountains ---
+// Verified in: nkopp-cmd/travelchat-ai
 export const templePagoda: SiteImage = {
-  src: unsplash("photo-1490806843957-31f4c9a91c65", 1200, 80),
-  alt: "Mount Fuji with cherry blossoms and traditional pagoda",
+  src: unsplash("photo-1470004914212-05527e49370b", 1200, 80),
+  alt: "Stunning natural landscape with mountains",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Bamboo grove (Arashiyama) ---
+// --- Japan bamboo (same as architectureDetail) ---
 export const naraStreetscape: SiteImage = {
   src: unsplash("photo-1528360983277-13d401cdc186", 1200, 80),
   alt: "Bamboo grove path in Arashiyama, Kyoto",
@@ -166,50 +183,55 @@ export const naraStreetscape: SiteImage = {
   creditUrl: "https://unsplash.com",
 };
 
-// --- Shinkansen bullet train ---
+// --- Travel / exploration ---
+// Verified in: nkopp-cmd/travelchat-ai
 export const japanTravel: SiteImage = {
-  src: unsplash("photo-1475938476650-3164675af7da", 1200, 80),
-  alt: "Shinkansen bullet train speeding through Japan",
+  src: unsplash("photo-1538485399081-7191377e8241", 1200, 80),
+  alt: "Travel exploration scenery",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Kimono in Gion ---
+// --- Classic Japan (same as romanticJapan) ---
 export const coupleJapan: SiteImage = {
-  src: unsplash("photo-1542931287-023b922fa89b", 1200, 80),
-  alt: "Person in kimono walking through historic Japanese district",
+  src: unsplash("photo-1558981403-c5f9899a28bc", 1200, 80),
+  alt: "Classic Japanese cultural scene",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Floating torii gate, Miyajima ---
+// --- Cultural scenery ---
+// Verified in: nkopp-cmd/travelchat-ai
 export const japaneseArt: SiteImage = {
-  src: unsplash("photo-1542640244-7e672d6cef21", 1200, 80),
-  alt: "Floating torii gate at Itsukushima Shrine, Miyajima",
+  src: unsplash("photo-1525625293386-3f8f99389edd", 1200, 80),
+  alt: "Cultural travel destination",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Osaka castle ---
+// --- Destination scenery ---
+// Verified in: nkopp-cmd/travelchat-ai
 export const japaneseFestival: SiteImage = {
-  src: unsplash("photo-1590256153835-06900f86532d", 1200, 80),
-  alt: "Osaka Castle surrounded by cherry blossoms",
+  src: unsplash("photo-1508009603885-50cf7c579365", 1200, 80),
+  alt: "Vibrant travel destination scenery",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Shibuya crossing ---
+// --- Japan cityscape ---
+// Verified in: sachin-viol/Travel-Agency (Japanese Wonders)
 export const historicNara: SiteImage = {
-  src: unsplash("photo-1542051841857-5f90071e7989", 1200, 80),
-  alt: "Busy Shibuya crossing in Tokyo at night",
+  src: unsplash("photo-1503899036084-c55cdd92da26", 1200, 80),
+  alt: "Japanese city skyline with modern architecture",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
 
-// --- Tokyo cityscape ---
+// --- Travel planning / destination ---
+// Verified in: nkopp-cmd/travelchat-ai
 export const travelPlanning: SiteImage = {
-  src: unsplash("photo-1503899036084-c55cdd92da26", 1200, 80),
-  alt: "Tokyo cityscape with modern skyscrapers and traditional charm",
+  src: unsplash("photo-1596178065887-1198b6148b2b", 1200, 80),
+  alt: "Travel destination overview",
   credit: "Unsplash",
   creditUrl: "https://unsplash.com",
 };
