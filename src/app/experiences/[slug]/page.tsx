@@ -7,7 +7,7 @@ import StayCard from "@/components/StayCard";
 import UnsplashImage from "@/components/UnsplashImage";
 import { experiences, getExperienceBySlug } from "@/data/experiences";
 import { getStayBySlug } from "@/data/stays";
-import { experienceImages, toriiGate } from "@/lib/images";
+import { experienceImages, toriiGate, kasugaLanterns } from "@/lib/images";
 import Link from "next/link";
 
 interface ExperiencePageProps {
@@ -106,6 +106,11 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
               {p}
             </p>
           ))}
+
+          {/* Inline scenery image */}
+          <div className="my-8 aspect-[16/8] bg-gray-lighter overflow-hidden">
+            <UnsplashImage image={kasugaLanterns} />
+          </div>
 
           {exp.sections.map((section, i) => (
             <div key={i} className="mt-10">

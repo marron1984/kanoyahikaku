@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 import UnsplashImage from "@/components/UnsplashImage";
 import { stays, getStayBySlug } from "@/data/stays";
 import { comparisonMetrics } from "@/lib/constants";
-import { stayImages, nightLanternStreet, japaneseGarden } from "@/lib/images";
+import { stayImages, nightLanternStreet, japaneseGarden, naraDeer, architectureDetail } from "@/lib/images";
 import Link from "next/link";
 
 interface StayPageProps {
@@ -132,6 +132,11 @@ export default async function StayPage({ params }: StayPageProps) {
                 {paragraph}
               </p>
             ))}
+          </div>
+
+          {/* Inline scenery image */}
+          <div className="my-10 aspect-[16/8] bg-gray-lighter overflow-hidden">
+            <UnsplashImage image={isKanoya ? naraDeer : architectureDetail} />
           </div>
 
           {/* Kanoya-exclusive sections */}

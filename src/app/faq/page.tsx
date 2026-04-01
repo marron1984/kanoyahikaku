@@ -5,7 +5,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import UnsplashImage from "@/components/UnsplashImage";
 import { globalFaqs } from "@/data/faqs";
-import { kasugaLanterns } from "@/lib/images";
+import { kasugaLanterns, japaneseGarden } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions — Nara Stays",
@@ -62,7 +62,7 @@ export default function FAQPage() {
         description="Compare Nara's finest stays and find the one that matches your travel style."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
         secondaryCta={{ label: "Explore Kanoya", href: "/stays/kanoya" }}
-        variant="light"
+        backgroundImage={japaneseGarden}
       />
     </>
   );

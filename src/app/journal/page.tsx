@@ -5,7 +5,7 @@ import ArticleCard from "@/components/ArticleCard";
 import CTASection from "@/components/CTASection";
 import UnsplashImage from "@/components/UnsplashImage";
 import { getAllArticles, getAllCategories } from "@/lib/articles-unified";
-import { naraStreetscape } from "@/lib/images";
+import { naraStreetscape, cherryBlossom } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Journal — Nara Travel Guides & Insights",
@@ -80,6 +80,7 @@ export default function JournalIndexPage() {
         description="Compare the best luxury accommodations in Nara, ranked by our editorial team."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
         secondaryCta={{ label: "Browse Experiences", href: "/experiences/early-morning-deer-walk" }}
+        backgroundImage={cherryBlossom}
       />
     </>
   );

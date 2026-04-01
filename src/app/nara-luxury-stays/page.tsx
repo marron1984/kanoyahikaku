@@ -7,7 +7,7 @@ import CTASection from "@/components/CTASection";
 import UnsplashImage from "@/components/UnsplashImage";
 import { getStaysSorted } from "@/data/stays";
 import { recommendationCategories } from "@/lib/constants";
-import { todaiji, romanticJapan } from "@/lib/images";
+import { todaiji, romanticJapan, naraDeer } from "@/lib/images";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -100,6 +100,13 @@ export default function ComparisonPage() {
           </div>
         </div>
       </section>
+
+      {/* Scenic break image */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="aspect-[16/5] bg-gray-lighter overflow-hidden">
+          <UnsplashImage image={naraDeer} />
+        </div>
+      </div>
 
       {/* Best-For Awards */}
       <section className="py-16 sm:py-24">

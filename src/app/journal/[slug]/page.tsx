@@ -9,7 +9,7 @@ import {
   getRelatedArticles,
 } from "@/lib/articles-unified";
 import { getStayBySlug } from "@/data/stays";
-import { getArticleImage } from "@/lib/images";
+import { getArticleImage, todaiji } from "@/lib/images";
 import UnsplashImage from "@/components/UnsplashImage";
 import Link from "next/link";
 
@@ -206,6 +206,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         description="Compare the best luxury accommodations in Nara, ranked by our editorial team."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
         secondaryCta={{ label: "Read the Journal", href: "/journal" }}
+        backgroundImage={todaiji}
       />
     </>
   );
