@@ -4,8 +4,10 @@ import SectionHeading from "@/components/SectionHeading";
 import StayCard from "@/components/StayCard";
 import ComparisonTable from "@/components/ComparisonTable";
 import CTASection from "@/components/CTASection";
+import UnsplashImage from "@/components/UnsplashImage";
 import { getStaysSorted } from "@/data/stays";
 import { recommendationCategories } from "@/lib/constants";
+import { todaiji } from "@/lib/images";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -43,6 +45,13 @@ export default function ComparisonPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* Hero Image */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="aspect-[16/5] bg-gray-lighter overflow-hidden">
+          <UnsplashImage image={todaiji} priority />
+        </div>
+      </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "Compare Luxury Stays" }]} />

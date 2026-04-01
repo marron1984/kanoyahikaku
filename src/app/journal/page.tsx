@@ -3,7 +3,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SectionHeading from "@/components/SectionHeading";
 import ArticleCard from "@/components/ArticleCard";
 import CTASection from "@/components/CTASection";
+import UnsplashImage from "@/components/UnsplashImage";
 import { getAllArticles, getAllCategories } from "@/lib/articles-unified";
+import { naraStreetscape } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Journal — Nara Travel Guides & Insights",
@@ -35,6 +37,13 @@ export default function JournalIndexPage() {
 
   return (
     <>
+      {/* Hero Image */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="aspect-[16/5] bg-gray-lighter overflow-hidden">
+          <UnsplashImage image={naraStreetscape} priority />
+        </div>
+      </div>
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "Journal" }]} />
       </div>

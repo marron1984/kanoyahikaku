@@ -11,7 +11,7 @@ import { getFeaturedStay, getStaysSorted } from "@/data/stays";
 import { experiences } from "@/data/experiences";
 import { getFeaturedArticles } from "@/lib/articles-unified";
 import { globalFaqs } from "@/data/faqs";
-import { heroHome } from "@/lib/images";
+import { heroHome, naraDeer, cherryBlossom } from "@/lib/images";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -71,29 +71,41 @@ export default function HomePage() {
 
       {/* Why Stay Overnight */}
       <section className="py-16 sm:py-24 bg-cream-dark/50">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <SectionHeading
-            label="Perspective"
-            title="Why Staying Overnight in Nara Changes Everything"
-          />
-          <div className="space-y-6 text-base leading-relaxed text-charcoal-light text-left">
-            <p>
-              Most visitors treat Nara as a three-hour detour from Kyoto — a quick stop to see the deer and the Great Buddha. They leave before the real Nara reveals itself.
-            </p>
-            <p>
-              The city&apos;s true character emerges in the hours most travelers miss. The park at dawn, when mist hangs between ancient trees and deer move through the silence like spirits. The streets of Naramachi after dark, softly lit and profoundly peaceful. The weight of a Nara evening, when the temples stand against the sky and the crowds have long since gone.
-            </p>
-            <p>
-              Staying overnight is not just practical — it is the single best decision you can make to elevate your Nara experience from pleasant to unforgettable. The question is not whether to stay, but where.
-            </p>
-          </div>
-          <div className="mt-8">
-            <Link
-              href="/journal/how-many-nights-to-spend-in-nara"
-              className="text-sm text-charcoal border-b border-charcoal/20 hover:border-charcoal transition-colors"
-            >
-              Read: How many nights to spend in Nara
-            </Link>
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div className="aspect-[4/3] bg-gray-lighter overflow-hidden">
+              <img
+                src={naraDeer.src}
+                alt={naraDeer.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.25em] text-gold mb-3">Perspective</p>
+              <h2 className="font-serif text-2xl sm:text-3xl text-charcoal tracking-tight">
+                Why Staying Overnight in Nara Changes Everything
+              </h2>
+              <div className="mt-6 space-y-4 text-base leading-relaxed text-charcoal-light">
+                <p>
+                  Most visitors treat Nara as a three-hour detour from Kyoto — a quick stop to see the deer and the Great Buddha. They leave before the real Nara reveals itself.
+                </p>
+                <p>
+                  The city&apos;s true character emerges in the hours most travelers miss. The park at dawn, when mist hangs between ancient trees and deer move through the silence like spirits. The streets of Naramachi after dark, softly lit and profoundly peaceful.
+                </p>
+                <p>
+                  Staying overnight is the single best decision you can make to elevate your Nara experience from pleasant to unforgettable.
+                </p>
+              </div>
+              <div className="mt-6">
+                <Link
+                  href="/journal/how-many-nights-to-spend-in-nara"
+                  className="text-sm text-charcoal border-b border-charcoal/20 hover:border-charcoal transition-colors"
+                >
+                  Read: How many nights to spend in Nara
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -192,6 +204,7 @@ export default function HomePage() {
         description="Compare five premium properties across experience depth, design, cultural authenticity, and more."
         primaryCta={{ label: "Compare Stays", href: "/nara-luxury-stays" }}
         secondaryCta={{ label: "Read the Journal", href: "/journal" }}
+        backgroundImage={cherryBlossom}
       />
     </>
   );

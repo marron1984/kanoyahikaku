@@ -3,7 +3,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import SectionHeading from "@/components/SectionHeading";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
+import UnsplashImage from "@/components/UnsplashImage";
 import { globalFaqs } from "@/data/faqs";
+import { kasugaLanterns } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions — Nara Stays",
@@ -31,6 +33,13 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* Hero Image */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="aspect-[16/5] bg-gray-lighter overflow-hidden">
+          <UnsplashImage image={kasugaLanterns} priority />
+        </div>
+      </div>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Breadcrumbs items={[{ label: "FAQ" }]} />
